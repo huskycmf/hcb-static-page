@@ -1,4 +1,4 @@
-husky-blog
+husky-static-pages
 ==================
 
-Plugin
+Plugin for managing static pages
