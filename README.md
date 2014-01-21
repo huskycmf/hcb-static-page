@@ -1,4 +1,4 @@
-hcb-pages
-=========
+husky-blog
+==================
 
-HuskyCMS plugin for static pages
+Plugin
