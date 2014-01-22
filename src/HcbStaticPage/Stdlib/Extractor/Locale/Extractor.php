@@ -3,7 +3,7 @@ namespace HcbStaticPage\Stdlib\Extractor\Locale;
 
 use Zf2Libs\Stdlib\Extractor\ExtractorInterface;
 use Zf2Libs\Stdlib\Extractor\Exception\InvalidArgumentException;
-use HcbStaticPage\Entity\Post\Data as PostDataEntity;
+use HcbStaticPage\Entity\StaticPage\Locale as LocaleEntity;
 use HcBackend\Stdlib\Extractor\Page\Extractor as PageExtractor;
 
 class Extractor implements ExtractorInterface
@@ -24,38 +24,35 @@ class Extractor implements ExtractorInterface
     /**
      * Extract values from an object
      *
-     * @param  PostDataEntity $postData
+     * @param  LocaleEntity $locale
      * @throws \Zf2Libs\Stdlib\Extractor\Exception\InvalidArgumentException
      * @return array
      */
-    public function extract($postData)
+    public function extract($locale)
     {
-        if (!$postData instanceof PostDataEntity) {
-            throw new InvalidArgumentException("Expected HcbStaticPage\\Entity\\Post\\Data object, invalid object given");
+        if (!$locale instanceof LocaleEntity) {
+            throw new InvalidArgumentException("Expected HcbStaticPage\\Entity\\StaticPage\\Locale
+                                                object, invalid object given");
         }
 
-        $createdTimestamp = $postData->getCreatedTimestamp();
+        $createdTimestamp = $locale->getCreatedTimestamp();
         if ($createdTimestamp) {
             $createdTimestamp = $createdTimestamp->format('Y-m-d H:i:s');
         }
 
-        $updatedTimestamp = $postData->getUpdatedTimestamp();
+        $updatedTimestamp = $locale->getUpdatedTimestamp();
         if ($updatedTimestamp) {
             $updatedTimestamp = $updatedTimestamp->format('Y-m-d H:i:s');
         }
 
+        $localData = array('id'=>$locale->getId(),
+                           'lang'=>$locale->getLang(),
+                           'content'=>$locale->getContent(),
+                           'createdTimestamp'=>$createdTimestamp,
+                           'updatedTimestamp'=>$updatedTimestamp);
 
-
-        $localData =array('id'=>$postData->getId(),
-                          'title'=>$postData->getTitle(),
-                          'lang'=>$postData->getLang(),
-                          'preview'=>$postData->getPreview(),
-                          'content'=>$postData->getContent(),
-                          'createdTimestamp'=>$createdTimestamp,
-                          'updatedTimestamp'=>$updatedTimestamp);
-
-        if (!is_null($postData->getPage())) {
-            return array_merge($localData, $this->pageExtractor->extract($postData->getPage()));
+        if (!is_null($locale->getPage())) {
+            return array_merge($localData, $this->pageExtractor->extract($locale->getPage()));
         } else {
             return $localData;
         }

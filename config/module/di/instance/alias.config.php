@@ -2,7 +2,7 @@
 return array(
     //Controllers
     'HcbStaticPage-Controller-Collection-List' => 'HcBackend\Controller\Common\Collection\ListController',
-    'HcbStaticPage-Controller-Delete' => 'HcBackend\Controller\Common\Collection\DataController',
+    'HcbStaticPage-Controller-Collection-Delete' => 'HcBackend\Controller\Common\Collection\DataController',
     'HcbStaticPage-Controller-Create' => 'HcBackend\Controller\Common\Collection\DataController',
     'HcbStaticPage-Controller-Locale-Update' =>
         'HcBackend\Controller\Common\Collection\ResourceDataController',

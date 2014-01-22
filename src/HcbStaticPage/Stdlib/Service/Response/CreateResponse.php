@@ -2,8 +2,8 @@
 namespace HcbStaticPage\Stdlib\Service\Response;
 
 use Zend\I18n\Translator\Translator;
-use Zf2Libs\Stdlib\Data\DataInterface;
-use Zf2Libs\Stdlib\Data\ResourceInterface;
+use Zf2Libs\Service\Response\DataInterface;
+use Zf2Libs\Service\Response\ResourceInterface;
 use Zf2Libs\Stdlib\Service\Response\Messages\Response;
 use HcbStaticPage\Stdlib\Response\Exception\InvalidArgumentException;
 

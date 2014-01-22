@@ -1,8 +1,9 @@
 define([
-    "../../../../../../../../public/vendor/dojo/_base/declare",
-    "hcb-blog/posts/manage/Container",
-    "./LangContainer"
+    "dojo/_base/declare",
+    "hc-backend/widget/ContentLocalization/Container",
+    "../manage/LangContainer"
 ], function(declare, Container, LangContainer) {
+
     return declare([ Container ], {
         baseClass: 'postsUpdate',
         langContainer: LangContainer,

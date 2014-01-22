@@ -9,7 +9,7 @@ define([
     "dojo/i18n!../nls/List",
     "dojo/request",
     "hc-backend/router",
-    "hcb-static-page/posts/list/widget/Grid",
+    "hcb-static-page/list/widget/Grid",
     "dijit/form/Button",
     "hc-backend/dgrid/form/DeleteSelectedButton"
 ], function(declare, array, lang, on, _ContentMixin, _TemplatedMixin,

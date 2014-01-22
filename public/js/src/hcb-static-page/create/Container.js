@@ -1,11 +1,10 @@
 define([
-    "../../../../../../../../public/vendor/dojo/_base/declare",
-    "hcb-blog/posts/manage/Container",
-    "hcb-blog/posts/manage/LangContainer",
-    "hcb-blog/posts/manage/widget/Tab"
-], function(declare, Container, LangContainer, Tab) {
+    "dojo/_base/declare",
+    "hc-backend/widget/ContentLocalization/Container",
+    "../manage/LangContainer"
+], function(declare, Container, LangContainer) {
     return declare([ Container ], {
         baseClass: 'postsCreate',
-        langContainer: declare([LangContainer], {tabWidget: Tab})
+        langContainer: LangContainer
     });
 });

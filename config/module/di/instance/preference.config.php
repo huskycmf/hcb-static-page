@@ -6,8 +6,8 @@ return array(
     'Zend\ServiceManager\ServiceLocatorInterface' =>
         'ServiceManager',
 
-    'HcbStaticPage\Data\Locale\SaveInterface' =>
-        'HcbBPage\Data\Locale\Save',
+    'HcbStaticPage\Data\LocaleInterface' =>
+        'HcbStaticPage\Data\Locale',
 
     'HcbStaticPage\Service\Locale\SaveServiceInterface' =>
         'HcbStaticPage\Service\Locale\SaveService'

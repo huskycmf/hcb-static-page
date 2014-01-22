@@ -2,7 +2,7 @@
 return array(
     'HcbStaticPage-Paginator-ViewModel-JsonModel-Page' => array(
         'parameters' => array(
-            'extractor' => 'HcbStaticPages\Stdlib\Extractor\Extractor'
+            'extractor' => 'HcbStaticPage\Stdlib\Extractor\Extractor'
         )
     ),
 

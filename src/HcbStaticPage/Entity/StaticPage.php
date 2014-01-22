@@ -33,7 +33,7 @@ class StaticPage implements EntityInterface
     /**
      * @var Locale
      *
-     * @ORM\OneToMany(targetEntity="HcbStaticPage\Entity\StaticPage\Locale", mappedBy="static_page")
+     * @ORM\OneToMany(targetEntity="HcbStaticPage\Entity\StaticPage\Locale", mappedBy="staticPage")
      * @ORM\OrderBy({"updatedTimestamp" = "DESC"})
      */
     private $locale = null;

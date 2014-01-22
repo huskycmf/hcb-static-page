@@ -1,12 +1,4 @@
 <form data-dojo-attach-point="containerNode" class="dijitHidden">
-    ${!_t.titleLabel}
-    <input class="${baseClass}Title"
-           data-dojo-type="dijit/form/ValidationTextBox"
-           data-dojo-props='name:"title",
-                            required: true,
-                            maxLength: 500' />
-    ${!_t.titleHelp}
-
     ${!_t.urlLabel}
     <input class="${baseClass}Url" data-dojo-type="dijit/form/TextBox" data-dojo-props='name:"pageUrl"' />
     ${!_t.urlHelp}
@@ -28,14 +20,6 @@
            data-dojo-type="dijit/form/Textarea"
            data-dojo-props='name:"pageKeywords", maxLength: 300' />
     ${!_t.metaKeywordsHelp}
-
-    ${!_t.previewLabel}
-    <div class="${baseClass}Editor"
-         data-dojo-type="dojo-ckeditor/Editor"
-         data-dojo-attach-point="previewEditorWidget"
-         data-dojo-props='name:"preview",
-                          settings:{filebrowserUploadUrl: "${filebrowserUploadUrl}"}'></div>
-    ${!_t.previewHelp}
 
     ${!_t.contentLabel}
     <div class="${baseClass}Editor"

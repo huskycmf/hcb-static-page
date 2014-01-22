@@ -38,7 +38,7 @@ class FetchQbBuilderService implements DataServiceInterface
     {
         /* @var $qb QueryBuilder */
         $qb = $this->entityManager
-                   ->getRepository('HcbStaticPage\Entity\Post')
+                   ->getRepository('HcbStaticPage\Entity\StaticPage')
                    ->createQueryBuilder('p');
 
         $qb->where('p.enabled = 1');
