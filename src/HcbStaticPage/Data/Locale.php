@@ -61,6 +61,8 @@ class Locale extends Page implements LocaleInterface, DataMessagesInterface
         $resourceInputContentLoader->setAllowEmpty(true);
         $this->add($resourceInputContentLoader);
 
+        $this->get('pageUrl')->setRequired(true);
+
         $this->translate = $translator;
         $this->setData($requestExtractor->extract($request));
     }
@@ -99,6 +101,10 @@ class Locale extends Page implements LocaleInterface, DataMessagesInterface
         $messages = array();
         if (array_key_exists('lang', $invalidInputs)) {
             $messages['lang'] = $this->translate->translate('Language must be correct');
+        }
+
+        if (array_key_exists('urlPage', $invalidInputs)) {
+            $messages['urlPage'] = $this->translate->translate('Url page required and must not be empty');
         }
 
         return $messages;

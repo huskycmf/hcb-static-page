@@ -5,7 +5,7 @@ use HcBackend\Entity\EntityInterface;
 use HcBackend\Service\ResourceCommandInterface;
 use HcbStaticPage\Data\LocaleInterface;
 use HcbStaticPage\Entity\StaticPage;
-use Zf2Libs\Stdlib\Service\Response\Messages\ResponseMessagesInterface;
+use Zf2Libs\Stdlib\Service\Response\Messages\ResponseInterface;
 
 class UpdateCommand implements ResourceCommandInterface
 {
@@ -29,7 +29,7 @@ class UpdateCommand implements ResourceCommandInterface
     /**
      * @param \HcBackend\Entity\EntityInterface|\HcbStaticPage\Entity\StaticPage\Locale $postDataEntity
      *
-     * @return ResponseMessagesInterface
+     * @return ResponseInterface
      */
     public function execute(EntityInterface $postDataEntity)
     {

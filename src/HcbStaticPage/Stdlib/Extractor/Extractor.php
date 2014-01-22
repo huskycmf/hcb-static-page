@@ -43,7 +43,7 @@ class Extractor implements ExtractorInterface
         }
 
         return array('id'=>$staticPage->getId(),
-                     'content'=>$localeEntity->getContent(),
+                     'url'=>$localeEntity->getPage()->getUrl(),
                      'createdTimestamp'=>$createdTimestamp);
     }
 }

@@ -14,7 +14,7 @@ return array(
         'HcBackend\Controller\Common\Collection\ResourceListController',
 
     'HcbStaticPage-Controller-Locale-Image-Create' =>
-        'Zf2FileUploader\Controller\Images\BaseCreateController',
+        'Zf2FileUploader\Controller\Images\CreateController',
 
     //Common
     'HcbStaticPage-Paginator-ViewModel-JsonModel-Page' =>

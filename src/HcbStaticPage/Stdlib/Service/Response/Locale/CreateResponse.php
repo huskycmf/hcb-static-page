@@ -1,8 +1,8 @@
 <?php
 namespace HcbStaticPage\Stdlib\Service\Response\Locale;
 
-use Zf2Libs\Service\Response\DataInterface;
-use Zf2Libs\Service\Response\ResourceInterface;
+use Zf2Libs\Stdlib\Response\DataInterface;
+use Zf2Libs\Stdlib\Service\Response\ResourceInterface;
 use Zf2Libs\Stdlib\Service\Response\Messages\Response;
 use HcbStaticPage\Stdlib\Response\Exception\InvalidArgumentException;
 

@@ -2,7 +2,7 @@ define({ root:
 //begin v1.x content
     ({
         'labelId': 'Id',
-        'labelContent': 'Content',
+        'labelUrl': 'Url address',
         'labelCreatedTimestamp': 'Created',
         'loadingMessage': 'Loading ...',
         'noDataMessage': 'No data found',

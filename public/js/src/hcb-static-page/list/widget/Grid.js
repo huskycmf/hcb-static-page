@@ -28,7 +28,7 @@ define([
         columns: [
             selector({ label: "", width: 40, selectorType: "checkbox" }),
             {label: translation['labelId'], hidden: true, field: 'id', sortable: true, resizable: false},
-            editor({label: translation['labelContent'], field: 'content', hidden: false,
+            editor({label: translation['labelUrl'], field: 'url', hidden: false,
                     sortable: true, resizable: true, route: '/update/:id'}),
             timestamp({label: translation['labelCreatedTimestamp'], field: 'createdTimestamp', sortable: true})
         ],

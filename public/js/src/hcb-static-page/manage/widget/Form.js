@@ -27,7 +27,7 @@ define([
 
         postMixInProperties: function () {
             try {
-                this.filebrowserUploadUrl = config.get('primaryRoute')+'/static-page/images';
+                this.filebrowserUploadUrl = config.get('primaryRoute')+'/static-page/image';
 
                 this.inherited(arguments);
             } catch (e) {

@@ -6,7 +6,7 @@ use HcBackend\Service\ImageBinderServiceInterface;
 use HcbStaticPage\Data\LocaleInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use HcbStaticPage\Entity\StaticPage;
-use Zf2Libs\Stdlib\Service\Response\Messages\ResponseMessagesInterface;
+use Zf2Libs\Stdlib\Service\Response\Messages\ResponseInterface;
 
 class UpdateService
 {
@@ -16,7 +16,7 @@ class UpdateService
     protected $entityManager;
 
     /**
-     * @var ResponseMessagesInterface
+     * @var ResponseInterface
      */
     protected $saveResponse;
 
@@ -34,12 +34,12 @@ class UpdateService
      * @param EntityManagerInterface $entityManager
      * @param PageBinderServiceInterface $pageBinderService
      * @param \HcBackend\Service\ImageBinderServiceInterface $imageBinderService
-     * @param ResponseMessagesInterface $saveResponse
+     * @param ResponseInterface $saveResponse
      */
     public function __construct(EntityManagerInterface $entityManager,
                                 PageBinderServiceInterface $pageBinderService,
                                 ImageBinderServiceInterface $imageBinderService,
-                                ResponseMessagesInterface $saveResponse)
+                                ResponseInterface $saveResponse)
     {
         $this->pageBinderService = $pageBinderService;
         $this->imageBinderService = $imageBinderService;

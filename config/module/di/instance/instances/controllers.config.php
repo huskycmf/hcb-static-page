@@ -43,7 +43,7 @@ return array(
     'HcbStaticPage-Controller-Locale-Collection-List' => array(
         'parameters' => array(
             'fetchService' => 'HcbStaticPage-Service-FetchService-Page',
-            'paginatorDataFetchService' => 'HcbStaticPage\Service\Collection\FetchQbBuilderService',
+            'paginatorDataFetchService' => 'HcbStaticPage\Service\Locale\Collection\FetchQbBuilderService',
             'viewModel' => 'HcbStaticPage-Paginator-ViewModel-JsonModel-Locale'
         )
     ),

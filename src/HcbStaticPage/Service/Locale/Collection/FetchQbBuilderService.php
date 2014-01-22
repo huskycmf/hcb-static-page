@@ -1,5 +1,5 @@
 <?php
-namespace HcbStaticPage\Service\Posts\Post;
+namespace HcbStaticPage\Service\Locale\Collection;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use HcBackend\Service\Fetch\Paginator\ArrayCollection\ResourceDataServiceInterface;
