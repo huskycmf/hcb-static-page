@@ -23,7 +23,7 @@ define([
         //  summary:
         //      Grid widget for displaying all available clients
         //      as list
-        store: PostsStore,
+        store: StaticPageStore,
 
         columns: [
             selector({ label: "", width: 40, selectorType: "checkbox" }),
