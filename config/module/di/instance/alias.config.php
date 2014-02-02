@@ -1,17 +1,19 @@
 <?php
 return array(
     //Controllers
-    'HcbStaticPage-Controller-Collection-List' => 'HcBackend\Controller\Common\Collection\ListController',
-    'HcbStaticPage-Controller-Collection-Delete' => 'HcBackend\Controller\Common\Collection\DataController',
-    'HcbStaticPage-Controller-Create' => 'HcBackend\Controller\Common\Collection\DataController',
+    'HcbStaticPage-Controller-Collection-List' =>
+        'HcCore\Controller\Common\Rest\Collection\ListController',
+    'HcbStaticPage-Controller-Collection-Delete' =>
+        'HcCore\Controller\Common\Rest\Collection\DataController',
+    'HcbStaticPage-Controller-Create' => 'HcCore\Controller\Common\Rest\Collection\DataController',
     'HcbStaticPage-Controller-Locale-Update' =>
-        'HcBackend\Controller\Common\Collection\ResourceDataController',
+        'HcCore\Controller\Common\Rest\Collection\ResourceDataController',
 
     'HcbStaticPage-Controller-Locale-Create' =>
-        'HcBackend\Controller\Common\Collection\ResourceDataController',
+        'HcCore\Controller\Common\Rest\Collection\ResourceDataController',
 
     'HcbStaticPage-Controller-Locale-Collection-List' =>
-        'HcBackend\Controller\Common\Collection\ResourceListController',
+        'HcCore\Controller\Common\Rest\Collection\ResourceListController',
 
     'HcbStaticPage-Controller-Locale-Image-Create' =>
         'Zf2FileUploader\Controller\Images\CreateController',
@@ -28,11 +30,12 @@ return array(
 
     'HcbStaticPage-Service-Image-SaveService-Locale' => 'Zf2FileUploader\Service\Image\SaveService',
 
-    'HcbStaticPage-Service-FetchService-Page' => 'HcBackend\Service\FetchService',
-    'HcbStaticPage-Service-FetchService-Locale' => 'HcBackend\Service\FetchService',
+    'HcbStaticPage-Service-FetchService-Page' => 'HcCore\Service\FetchService',
+    'HcbStaticPage-Service-FetchService-Locale' => 'HcCore\Service\FetchService',
 
-    'HcbStaticPage-Service-Collection-IdsService-Page' => 'HcBackend\Service\Collection\IdsService',
-    'HcbStaticPage-Data-Collection-Entities-ByIds-Page' => 'HcBackend\Data\Collection\Entities\ByIds',
+    'HcbStaticPage-Service-Collection-IdsService-Page' => 'HcCore\Service\Collection\IdsService',
+    'HcbStaticPage-Data-Collection-Entities-ByIds-Page' =>
+        'HcCore\Data\Collection\Entities\ByIds',
 
     'HcbStaticPage-Uploader-View-Model-UploaderModel-Locale-Image' =>
         'Zf2FileUploader\View\Model\UploaderModel',

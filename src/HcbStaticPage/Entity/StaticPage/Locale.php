@@ -1,7 +1,7 @@
 <?php
 namespace HcbStaticPage\Entity\StaticPage;
 
-use HcBackend\Entity\EntityInterface;
+use HcCore\Entity\EntityInterface;
 use HcBackend\Entity\Page;
 use HcBackend\Entity\PageBindInterface;
 use Doctrine\Common\Collections\ArrayCollection;

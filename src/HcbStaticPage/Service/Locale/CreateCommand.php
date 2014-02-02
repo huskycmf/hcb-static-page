@@ -1,8 +1,8 @@
 <?php
 namespace HcbStaticPage\Service\Locale;
 
-use HcBackend\Entity\EntityInterface;
-use HcBackend\Service\ResourceCommandInterface;
+use HcCore\Entity\EntityInterface;
+use HcCore\Service\ResourceCommandInterface;
 use HcbStaticPage\Data\LocaleInterface;
 use HcbStaticPage\Entity\StaticPage;
 use Zf2Libs\Stdlib\Service\Response\Messages\Response;
@@ -27,7 +27,7 @@ class CreateCommand implements ResourceCommandInterface
     }
 
     /**
-     * @param \HcBackend\Entity\EntityInterface|\HcbStaticPage\Entity\StaticPage $staticPageEntity
+     * @param \HcCore\Entity\EntityInterface|\HcbStaticPage\Entity\StaticPage $staticPageEntity
      *
      * @return Response
      */

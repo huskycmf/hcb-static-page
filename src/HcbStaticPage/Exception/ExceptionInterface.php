@@ -1,7 +1,7 @@
 <?php
 namespace HcbStaticPage\Exception;
 
-use HcBackend\Exception\ExceptionInterface as BackendExceptionInterface;
+use HcCore\Exception\ExceptionInterface as BackendExceptionInterface;
 
 /**
  * Exception marker interface

@@ -1,10 +1,10 @@
 <?php
 namespace HcbStaticPage\Data;
 
-use HcBackend\Data\DataMessagesInterface;
+use HcCore\Data\DataMessagesInterface;
 use HcBackend\Data\Page;
 use Zf2FileUploader\Resource\Persisted\ImageResourceInterface;
-use HcBackend\Stdlib\Extractor\Request\Payload\Extractor;
+use HcCore\Stdlib\Extractor\Request\Payload\Extractor;
 use Zend\Di\Di;
 use Zend\Http\PhpEnvironment\Request;
 use Zend\I18n\Translator\Translator;

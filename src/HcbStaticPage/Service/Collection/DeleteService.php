@@ -1,8 +1,8 @@
 <?php
 namespace HcbStaticPage\Service\Collection;
 
-use HcBackend\Data\Collection\Entities\ByIdsInterface;
-use HcBackend\Service\CommandInterface;
+use HcCore\Data\Collection\Entities\ByIdsInterface;
+use HcCore\Service\CommandInterface;
 use HcbStaticPage\Entity\StaticPage as StaticPageEntity;
 use Doctrine\ORM\EntityManagerInterface;
 use Zf2Libs\Stdlib\Service\Response\Messages\Response;
@@ -47,8 +47,8 @@ class DeleteService implements CommandInterface
     }
 
     /**
-     * @param \HcBackend\Data\Collection\Entities\ByIdsInterface $postsToDelete
-     * @internal param \HcBackend\Data\Collection\Entities\ByIdsInterface $clientsToBlock
+     * @param \HcCore\Data\Collection\Entities\ByIdsInterface $postsToDelete
+     * @internal param \HcCore\Data\Collection\Entities\ByIdsInterface $clientsToBlock
      * @return Response
      */
     protected  function delete(ByIdsInterface $postsToDelete)

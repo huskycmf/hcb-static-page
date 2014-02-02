@@ -1,7 +1,7 @@
 <?php
 namespace HcbStaticPage\Entity;
 
-use HcBackend\Entity\EntityInterface;
+use HcCore\Entity\EntityInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use HcbStaticPage\Entity\StaticPage\Locale;

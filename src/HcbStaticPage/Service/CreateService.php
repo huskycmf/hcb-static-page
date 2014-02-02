@@ -2,7 +2,7 @@
 namespace HcbStaticPage\Service;
 
 use Doctrine\ORM\EntityManagerInterface;
-use HcBackend\Service\CommandInterface;
+use HcCore\Service\CommandInterface;
 use HcbStaticPage\Entity\StaticPage;
 use HcbStaticPage\Stdlib\Service\Response\CreateResponse;
 

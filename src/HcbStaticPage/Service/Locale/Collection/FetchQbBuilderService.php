@@ -2,9 +2,9 @@
 namespace HcbStaticPage\Service\Locale\Collection;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use HcBackend\Service\Fetch\Paginator\ArrayCollection\ResourceDataServiceInterface;
+use HcCore\Service\Fetch\Paginator\ArrayCollection\ResourceDataServiceInterface;
 use Doctrine\ORM\QueryBuilder;
-use HcBackend\Service\Filtration\Collection\FiltrationServiceInterface;
+use HcCore\Service\Filtration\Collection\FiltrationServiceInterface;
 use HcbStaticPage\Entity\StaticPage;
 use HcbStaticPage\Service\Exception\InvalidResourceException;
 use Zend\Stdlib\Parameters;
