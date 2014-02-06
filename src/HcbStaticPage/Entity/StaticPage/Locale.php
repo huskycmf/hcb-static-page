@@ -44,7 +44,7 @@ class Locale implements EntityInterface, ImageBindInterface, PageBindInterface
     /**
      * @var StaticPage
      *
-     * @ORM\ManyToOne(targetEntity="HcbStaticPage\Entity\StaticPage")
+     * @ORM\ManyToOne(targetEntity="HcbStaticPage\Entity\StaticPage", inversedBy="locale")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="static_page_id", referencedColumnName="id")
      * })
