@@ -33,7 +33,7 @@ class Locale extends Page implements LocaleInterface, DataMessagesInterface
      * @return \HcbStaticPage\Data\Locale
      */
     public function __construct(Request $request,
-                                Extractor $requestExtractor,
+                                Extractor $dataExtractor,
                                 Translator $translator,
                                 LoadResourceInputInterface $resourceInputContentLoader,
                                 Di $di)
@@ -64,7 +64,7 @@ class Locale extends Page implements LocaleInterface, DataMessagesInterface
         $this->get('pageUrl')->setRequired(true);
 
         $this->translate = $translator;
-        $this->setData($requestExtractor->extract($request));
+        $this->setData($dataExtractor->extract($request));
     }
 
     /**
