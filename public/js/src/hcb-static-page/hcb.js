@@ -8,6 +8,7 @@ define([
     return declare("StaticPagePackage", [ _Package ], {
         // summary:
         //      Clients package will provide user to manage web site clients
-        title: translation['packageTitle']
+        title: translation['packageTitle'],
+        iconClass: 'static-pageIcon'
     });
 });
