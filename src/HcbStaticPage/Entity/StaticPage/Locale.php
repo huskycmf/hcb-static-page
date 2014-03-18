@@ -1,8 +1,8 @@
 <?php
 namespace HcbStaticPage\Entity\StaticPage;
 
+use HcBackend\Entity\PageInterface;
 use HcCore\Entity\EntityInterface;
-use HcBackend\Entity\Page;
 use HcBackend\Entity\PageBindInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
@@ -111,10 +111,10 @@ class Locale implements EntityInterface, ImageBindInterface, PageBindInterface
     /**
      * Set page
      *
-     * @param \HcBackend\Entity\Page $page
+     * @param \HcBackend\Entity\PageInterface $page
      * @return Locale
      */
-    public function setPage(Page $page = null)
+    public function setPage(PageInterface $page)
     {
         $this->page = $page;
 
