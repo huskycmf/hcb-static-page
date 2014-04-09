@@ -44,10 +44,9 @@ class Locale extends Page implements LocaleInterface, DataMessagesInterface
         $input = $di->get('Zend\InputFilter\Input', array('name'=>'lang'));
         $input->setRequired(true);
         $input->getValidatorChain()
-            ->attach($di->get('Zend\Validator\StringLength', array('options'=>array('min'=>2, 'max'=>2))))
-            ->attach($di->get('Zend\Validator\Regex', array('pattern'=>'/^[a-z]{2}$/')));
-        $input->getFilterChain()->attach($di->get('Zend\Filter\StringToLower'))
-            ->attach($di->get('Zend\Filter\StringTrim'));
+            ->attach($di->get('Zend\Validator\StringLength', array('options'=>array('min'=>5, 'max'=>5))))
+            ->attach($di->get('Zend\Validator\Regex', array('pattern'=>'/^[a-z]{2}-[A-Z]{2}$/')));
+        $input->getFilterChain()->attach($di->get('Zend\Filter\StringTrim'));
         $this->add($input);
 
         /* @var $input \Zend\InputFilter\Input */
