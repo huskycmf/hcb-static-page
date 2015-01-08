@@ -35,12 +35,11 @@
     <div class="row">
         ${!_t.contentLabel}
         <div class="${baseClass}Editor"
-             data-dojo-type="dojo-ckeditor/Editor"
+             data-dojo-type="hc-backend/Editor"
              data-dojo-attach-point="contentEditorWidget"
              data-dojo-props='name:"content",
-                              settings: {
-                              filebrowserUploadUrl: "${filebrowserUploadUrl}",
-                              allowedContent: true}'></div>
+                              settings: {allowedContent: true},
+                              uploadable: true'></div>
         <div class="field-description">${!_t.contentHelp}</div>
     </div>
 

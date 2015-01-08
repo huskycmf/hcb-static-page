@@ -50,7 +50,7 @@ return array(
 
     'HcbStaticPage-Controller-Locale-Image-Create' => array(
         'parameters' => array(
-            'saveService' => 'HcBackend-Images-Default-SaveService',
+            'saveService' => 'HcBackend-Service-Image-SaveService',
             'uploaderModel' => 'HcbStaticPage-Uploader-View-Model-UploaderModel-Locale-Image',
             'createResourceData' => 'HcbStaticPage-Uploader-InputFilter-Image-CreateResource-Locale'
         )
