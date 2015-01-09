@@ -6,7 +6,7 @@ use HcBackend\Service\ImageBinderServiceInterface;
 use HcbStaticPage\Data\LocaleInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use HcbStaticPage\Entity\StaticPage;
-use Zf2Libs\Stdlib\Service\Response\Messages\ResponseInterface;
+use Zf2Libs\Stdlib\Service\Response\Messages\ResponseInterface as ResponseMessagesInterface;
 
 class UpdateService
 {
@@ -16,7 +16,7 @@ class UpdateService
     protected $entityManager;
 
     /**
-     * @var ResponseInterface
+     * @var ResponseMessagesInterface
      */
     protected $saveResponse;
 
@@ -34,12 +34,12 @@ class UpdateService
      * @param EntityManagerInterface $entityManager
      * @param PageBinderServiceInterface $pageBinderService
      * @param \HcBackend\Service\ImageBinderServiceInterface $imageBinderService
-     * @param ResponseInterface $saveResponse
+     * @param ResponseMessagesInterface $saveResponse
      */
     public function __construct(EntityManagerInterface $entityManager,
                                 PageBinderServiceInterface $pageBinderService,
                                 ImageBinderServiceInterface $imageBinderService,
-                                ResponseInterface $saveResponse)
+                                ResponseMessagesInterface $saveResponse)
     {
         $this->pageBinderService = $pageBinderService;
         $this->imageBinderService = $imageBinderService;
@@ -50,7 +50,6 @@ class UpdateService
     /**
      * @param \HcbStaticPage\Entity\StaticPage\Locale $localeEntity
      * @param LocaleInterface $localeData
-     * @internal param \HcbStaticPage\Entity\StaticPage $postEntity
      * @return ResponseMessagesInterface
      */
     public function update(StaticPage\Locale $localeEntity, LocaleInterface $localeData)
@@ -69,7 +68,7 @@ class UpdateService
             $this->entityManager->commit();
         } catch (\Exception $e) {
             $this->entityManager->rollback();
-            $this->saveResponse->error($e->getMessage())->failed();
+            $this->saveResponse->error($e->getMessage());
             return $this->saveResponse;
         }
 

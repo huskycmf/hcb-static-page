@@ -21,28 +21,20 @@ class CreateService
     protected $createResponse;
 
     /**
-     * @var PageBinderServiceInterface
+     * @var UpdateService
      */
-    protected $pageBinderService;
-
-    /**
-     * @var ImageBinderServiceInterface
-     */
-    protected $imageBinderService;
+    protected $updateService;
 
     /**
      * @param EntityManagerInterface $entityManager
-     * @param PageBinderServiceInterface $pageBinderService
-     * @param ImageBinderServiceInterface $imageBinderService
+     * @param UpdateService $updateService
      * @param CreateResponse $saveResponse
      */
     public function __construct(EntityManagerInterface $entityManager,
-                                PageBinderServiceInterface $pageBinderService,
-                                ImageBinderServiceInterface $imageBinderService,
+                                UpdateService $updateService,
                                 CreateResponse $saveResponse)
     {
-        $this->pageBinderService = $pageBinderService;
-        $this->imageBinderService = $imageBinderService;
+        $this->updateService = $updateService;
         $this->entityManager = $entityManager;
         $this->createResponse = $saveResponse;
     }
@@ -63,17 +55,10 @@ class CreateService
             $localeEntity->setStaticPage($staticPageEntity);
             $localeEntity->setLang($localeData->getLang());
 
-            $this->imageBinderService->bind($localeData, $localeEntity);
-            $this->pageBinderService->bind($localeData, $localeEntity);
-
-            $this->entityManager->persist($localeEntity);
-
-            $localeEntity->setContent($localeData->getContent());
+            $this->updateService->update($localeEntity, $localeData);
 
             $this->entityManager->flush();
-
             $this->createResponse->setResource($localeEntity->getId());
-
             $this->entityManager->commit();
         } catch (\Exception $e) {
             $this->entityManager->rollback();

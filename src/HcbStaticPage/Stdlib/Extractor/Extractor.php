@@ -28,22 +28,21 @@ class Extractor implements ExtractorInterface
             $createdTimestamp = $createdTimestamp->format('Y-m-d H:i:s');
         }
 
-        $filtrated = $staticPage->getLocales()->filter(function (LocaleEntity $entity) {
-            if ($entity->getLang() == 'ru') {
-                return true;
-            }
-        });
+        $filtrated = $staticPage->getLocales();
+
+        $url = '__EMPTY__';
 
         /* @var $localeEntity LocaleEntity */
-        if ($filtrated->count() < 1) {
-            $localeEntity = $staticPage->getLocales()->slice(0,1);
-            $localeEntity = array_pop($localeEntity);
-        } else {
+        if ($filtrated->count() > 0) {
             $localeEntity = $filtrated->current();
+            $page = $localeEntity->getPage();
+            if (!is_null($page)) {
+                $url = $page->getUrl();
+            }
         }
 
         return array('id'=>$staticPage->getId(),
-                     'url'=>$localeEntity->getPage()->getUrl(),
+                     'url'=>$url,
                      'createdTimestamp'=>$createdTimestamp);
     }
 }

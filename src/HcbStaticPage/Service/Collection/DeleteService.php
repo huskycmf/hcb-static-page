@@ -4,7 +4,9 @@ namespace HcbStaticPage\Service\Collection;
 use HcCore\Data\Collection\Entities\ByIdsInterface;
 use HcCore\Service\CommandInterface;
 use HcbStaticPage\Entity\StaticPage as StaticPageEntity;
+use HcbStaticPage\Entity\StaticPage\Locale as StaticPageLocaleEntity;
 use Doctrine\ORM\EntityManagerInterface;
+use Zf2FileUploader\Resource\Handler\Remover\RemoverInterface;
 use Zf2Libs\Stdlib\Service\Response\Messages\Response;
 
 class DeleteService implements CommandInterface
@@ -25,16 +27,24 @@ class DeleteService implements CommandInterface
     protected $deleteData;
 
     /**
+     * @var RemoverInterface
+     */
+    protected $removerService;
+
+    /**
      * @param EntityManagerInterface $entityManager
      * @param Response $response
      * @param ByIdsInterface $deleteData
+     * @param RemoverInterface $removerService
      */
     public function __construct(EntityManagerInterface $entityManager,
                                 Response $response,
-                                ByIdsInterface $deleteData)
+                                ByIdsInterface $deleteData,
+                                RemoverInterface $removerService)
     {
         $this->entityManager = $entityManager;
         $this->response = $response;
+        $this->removerService = $removerService;
         $this->deleteData = $deleteData;
     }
 
@@ -59,6 +69,12 @@ class DeleteService implements CommandInterface
 
             /* @var $staticPageEntities StaticPageEntity[] */
             foreach ($staticPageEntities as $staticPageEntity) {
+                /* @var $localeStaticPageEntity StaticPageLocaleEntity */
+                foreach ($staticPageEntity->getLocales() as $localeStaticPageEntity) {
+                    foreach ($localeStaticPageEntity->getImage() as $imageEntity) {
+                        $this->removerService->remove($imageEntity->getImage());
+                    }
+                }
                 $this->entityManager->remove($staticPageEntity);
             }
 
