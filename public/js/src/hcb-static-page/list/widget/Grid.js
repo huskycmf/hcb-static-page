@@ -29,7 +29,7 @@ define([
             selector({ label: "", width: 40, selectorType: "checkbox" }),
             {label: translation['labelId'], hidden: true, field: 'id', sortable: true, resizable: false},
             editor({label: translation['labelUrl'], field: 'url', hidden: false,
-                    sortable: true, resizable: true, route: '/update/:id'}),
+                    sortable: false, resizable: true, route: '/update/:id'}),
             timestamp({label: translation['labelCreatedTimestamp'], field: 'createdTimestamp', sortable: true})
         ],
 
